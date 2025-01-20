@@ -1,0 +1,15 @@
+{
+  "files": [],
+  "compilerOptions": {
+    "target": "es6",
+    "module": "ESNext",
+    "strict": true,
+    "esModuleInterop": true,
+    "types": ["node"], // Đảm bảo "node" có ở đây
+    "lib": ["es6", "dom"] // Đảm bảo "dom" nếu dùng trong browser
+  },
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}

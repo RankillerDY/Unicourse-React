@@ -1,5 +1,4 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import dotenv from "dotenv";
 
 export interface Banner {
   id: number; // ID duy nhất của banner
@@ -12,9 +11,7 @@ export interface Banner {
   created_at: string; // Thời gian tạo (ISO 8601 string)
   updated_at: string; // Thời gian cập nhật (ISO 8601 string)
 }
-//Load file .env
-dotenv.config();
-const apiPath = process.env.SERVER_DEPLOY;
+const apiPath = import.meta.env.VITE_SERVER_DEPLOY;
 
 export const bannerApi = createApi({
   reducerPath: "banners",
@@ -23,7 +20,7 @@ export const bannerApi = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchBanners: builder.query<Banner, void>({
+      fetchBanners: builder.query<Banner[], void>({
         query: () => "banners",
       }),
     };

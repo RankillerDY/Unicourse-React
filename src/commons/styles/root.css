@@ -1,0 +1,65 @@
+/* Fonts */
+:root {
+    --font-weight-thin: 100;
+    --font-weight-light: 300;
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
+    --font-weight-black: 900;
+  
+    --font-size-xxs: 0.625rem;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.75rem;
+    --font-size-4xl: 2rem;
+    --font-size-5xl: 2.25rem;
+    --font-size-6xl: 2.5rem;
+    --font-size-7xl: 3rem;
+  
+    --line-height-xxs: 1;
+    --line-height-xs: 1.2;
+    --line-height-sm: 1.4;
+    --line-height-md: 1.6;
+    --line-height-lg: 1.8;
+    --line-height-xl: 2;
+  
+    --letter-spacing-tight: -0.05em;
+    --letter-spacing-normal: 0;
+    --letter-spacing-wide: 0.05em;
+  }
+  
+/* Colors */
+:root {
+    /* Background colors */
+    --background-success: #f0ffed;
+    --background-error: #ffeaea;
+    --background-black: #000000;
+    --background-white: #ffffff;
+    --background-chat-bot: #97d5fe31;
+    --background-gray-100: #f9f9f9;
+    --background-gray-150: #f7f7f7;
+    --background-gray-200: #efefef;
+    --background-gray-300: #e7e7e7;
+    --background-light: #f0f0f0;
+  
+    /* Primary colors */
+    --primary-light: #69c0ff;
+    --primary-main: #1890ff;
+    --primary-dark: #096dd9;
+  
+    /* Text colors */
+    --text-black: #000000;
+    --text-white: #ffffff;
+    --text-gray-800: #6a6f73;
+  
+    /* Border colors */
+    --border-color: #d1d7dc;
+    --border-error: #ff4d4f;
+}
+  

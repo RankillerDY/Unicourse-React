@@ -23,6 +23,6 @@ Follow these steps to set up and run the project locally:
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/yourusername/unicourse.git
-   cd unicourse
+   git clone https://github.com/RankillerDY/unicourse-react.git
+   cd unicourse-react
    ```

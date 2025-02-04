@@ -7,6 +7,7 @@
     justify-content: space-between;
     /* width: 100%; */
     border-bottom: 1px solid #cfd1d2;
+    /* margin: 1rem 0; */
 }
 
 .g_left {
@@ -48,17 +49,17 @@
 }
 
 .header__navigate-item {
-    font-size: 1.125rem;
+    font-size: 1.11rem;
     cursor: pointer;
     border-radius: 5px;
     position: relative;
     text-align: center;
     gap: 0;
     padding: 0% 4%;
-    font-weight: 500;
+    font-weight: 600;
     font-family: 'Times New Roman', Times, serif;
     color: #000;
-    opacity: 0.8;
+    opacity: 0.7;
 }
 
 .header__navigate-item:first-child::after {
@@ -95,6 +96,109 @@
     cursor: pointer;
 }
 
+.body_container{
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.mission_container{
+    margin-top: 2%;
+    padding: 0% 10%;
+}
+
+.mission{
+    color: #003a8c;
+    font-size: 2rem;
+    margin: 2rem 0;
+    font-weight: bold;
+}
+
+.mission_reference{
+    font-size: 2rem;
+    margin: 0;
+    max-width: 50rem;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.mission_content {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+}
+
+.mission_content_element{
+    padding: 30px 40px;
+    border: 1px solid #003a8c;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    gap: 1rem;
+}
+
+.mission_content_element:hover{
+    background-color: #003a8c ;
+}
+
+.mission_content_element svg {
+    fill: #003a8c;
+}
+
+.mission_content_element:hover .section-background__container-mission-item-header,
+.mission_content_element:hover .section-background__container-mission-item-icon,
+.mission_content_element:hover .section-background__container-mission-item-footer,
+.mission_content_element:hover svg{
+    color: #fff;
+    fill: #fff;
+}
+
+.section-background__container-mission-item-header {
+    font-size: 24px;
+    text-align: center;
+    font-weight: 600;
+    color: #003a8c;
+    margin: 0;
+}
+
+.section-background__container-mission-item-icon {
+    text-align: center;
+    font-weight: 600;
+    color: #003a8c;
+    margin: auto;  
+    width: 3rem;
+}
+
+.section-background__container-mission-item-footer {
+    margin: 0;
+    color: gray;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* Block 2 */
+.section_outstanding_courses_container {
+    padding: 0% 10%;
+}
+
+.section_outstanding_courses_header {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.section_outstanding_courses_title {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.section_outstanding_courses_introduce {
+    margin-top: 0;
+    color:#333;
+}
 /* Media Queries cho responsive */
 @media (max-width: 1200px) {
     .searchBar {

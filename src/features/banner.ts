@@ -11,6 +11,13 @@ export interface Banner {
   created_at: string; // Thời gian tạo (ISO 8601 string)
   updated_at: string; // Thời gian cập nhật (ISO 8601 string)
 }
+
+interface ResponseData {
+  data: Banner[]; // Danh sách banner
+  message: string; //
+  status: number; // Trạng thái trả về của API
+}
+
 const apiPath = import.meta.env.VITE_SERVER_DEPLOY;
 
 export const bannerApi = createApi({
@@ -20,7 +27,7 @@ export const bannerApi = createApi({
   }),
   endpoints(builder) {
     return {
-      fetchBanners: builder.query<Banner[], void>({
+      fetchBanners: builder.query<ResponseData, void>({
         query: () => "banners",
       }),
     };

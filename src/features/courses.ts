@@ -2,7 +2,13 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 import { Course } from "../types/home";
 
 interface ResponseData {
-  data: Course[]; // Danh sách banner
+  data: {
+    data: Course[] | [];
+    limit: number;
+    page: number;
+    total: number;
+    totalPages: number;
+  }; // Danh sách banner
   message: string; //
   status: number; // Trạng thái trả về của API
 }
@@ -16,10 +22,6 @@ interface getAllCoursesBody {
   };
 }
 const apiPath = import.meta.env.VITE_SERVER_DEPLOY;
-
-function calculator(a: number, b: number) {
-  return a * b;
-}
 
 export const courseApi = createApi({
   reducerPath: "courses",

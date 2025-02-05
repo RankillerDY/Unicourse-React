@@ -17,7 +17,7 @@ function Header() {
             <span className="g_left_icon">
               <LordIcon
                 src="https://cdn.lordicon.com/jtkfemwz.json"
-                trigger="hover"
+                trigger="loop"
                 size={24}
               />
             </span>
@@ -46,7 +46,7 @@ function Header() {
           {/* <!-- More Options --> */}
           <LordIcon
             src="https://cdn.lordicon.com/rcgrnzji.json"
-            trigger="hover"
+            trigger="loop"
             size={32}
           />
           {/* <!-- Login button --> */}

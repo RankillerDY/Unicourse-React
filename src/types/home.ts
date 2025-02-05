@@ -97,10 +97,12 @@ export interface Course {
   created_at: string;
   updated_at: string;
   category_id: number;
+  total_number_ratings: number;
   lecture_id: number;
   description: string;
   lecturer: Lecturer;
   category: Category;
+  average_rating: number;
   course_skill: any[]; // You can define a more specific type if needed
   course_mentor: CourseMentor[];
 }

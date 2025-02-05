@@ -23,6 +23,7 @@ export type LordIconProps = {
   colors?: LordIconColors;
   delay?: number;
   size?: number;
+  className?: string;
 };
 
 export const LordIcon = ({
@@ -31,6 +32,7 @@ export const LordIcon = ({
   size,
   trigger,
   delay,
+  className,
 }: LordIconProps) => {
   return (
     <lord-icon
@@ -42,6 +44,7 @@ export const LordIcon = ({
         width: size,
         height: size,
       }}
+      className={className}
     />
   );
 };

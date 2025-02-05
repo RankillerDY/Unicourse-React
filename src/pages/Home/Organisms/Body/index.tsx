@@ -1,6 +1,32 @@
+import { useState } from "react";
+import { useAppDispatch, useAppSelector } from "../../../../app/hooks";
 import Banner from "../Banner";
+import { useFetchCoursesQuery } from "../../../../features/courses";
+import Skeleton from "react-loading-skeleton";
+import { LordIcon } from "../../../../commons/lord-icon";
+import { Rating } from "@mui/material";
+import StarIcon from "@mui/icons-material/Star";
 
 function HomeBody() {
+  const highlightPageNumber = useAppSelector(
+    (state) => state.homePage.highlightPageNumber
+  );
+  const [hPageNum, sethPageNum] = useState(1);
+  const dispatch = useAppDispatch();
+  const { data, isFetching } = useFetchCoursesQuery({
+    orderBy: { price: "desc" },
+    page: hPageNum,
+    pageSize: 4,
+    where: {
+      status: { equals: "PUBLISHED" },
+      price: { gt: 0 },
+    },
+  });
+
+  if (isFetching || data === undefined) {
+    return <Skeleton count={4} />; // Hoặc một spinner đẹp hơn
+  }
+
   return (
     <>
       <Banner />
@@ -262,10 +288,53 @@ function HomeBody() {
           </div>
 
           <div className="course_list">
-            <div className="course_item_container">
-              <div className="course_item_container_header"></div>
-              <div className="course-item_container_content"></div>
-            </div>
+            {data!.data.data.map((data) => (
+              <div className="course_item_container">
+                <div className="course_item_container_header">
+                  <img src={data.thumbnail} alt={data.title} />
+                </div>
+                <div className="course_item_container_content">
+                  <p> {data.title} </p>
+                  <div className="course_item_price_container">
+                    <LordIcon
+                      src="https://cdn.lordicon.com/lxizbtuq.json"
+                      trigger="loop"
+                      size={25}
+                    />
+                    <span className="course_item_price">{data.price}</span>
+                  </div>
+                  <div className="course_item_rating_container">
+                    <Rating
+                      name="course-rating"
+                      value={data.average_rating}
+                      readOnly
+                      emptyIcon={
+                        <StarIcon
+                          style={{ opacity: 0.55 }}
+                          fontSize="inherit"
+                        />
+                      }
+                      size="small"
+                    />
+                    <p className="course_item_rating_counts">
+                      ({data.total_number_ratings})
+                    </p>
+                  </div>
+                  <div className="course_item_lecturer_container">
+                    <div className="course_item_lecturer_image_container">
+                      <img
+                        src="https://firebasestorage.googleapis.com/v0/b/unicourse-f4020.appspot.com/o/User%2FLeHoangChi_PMG.jpg?alt=media&token=109b2367-51a1-42f8-938f-b770846a7b39"
+                        alt={data.lecturer.user.full_name}
+                        className="course_item_lectuer_image"
+                      />
+                    </div>
+                    <p className="course_item_lecturer_name">
+                      {data.lecturer.user.full_name}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
         {/* Block3: Trải nghiệm học tập miễn phí */}

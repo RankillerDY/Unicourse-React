@@ -9,7 +9,9 @@ export const store = configureStore({
     [courseApi.reducerPath]: courseApi.reducer,
   },
   middleware: (getDefaultMiddleware) => {
-    return getDefaultMiddleware().concat(bannerApi.middleware);
+    return getDefaultMiddleware()
+      .concat(bannerApi.middleware)
+      .concat(courseApi.middleware);
   },
 });
 
